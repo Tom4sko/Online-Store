@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link';
 
 // icons
 import { FaShoppingCart } from "react-icons/fa";
@@ -10,11 +11,13 @@ import { FaRegHeart } from "react-icons/fa";
 const header = () => {
   return (
     <nav className="sticky top-0 bg-primary grid grid-rows-1 grid-cols-2 md:grid-cols-4 w-full px-2 md:px-10 border-secondary border-b-1 z-50">
-        <div className="flex flex-col font-bold border-secondary border-r-1 pr-2">
-            <span>The</span>
-            <h1>Bloomstore</h1>
-            <span>WebShop</span>
-        </div>
+        <Link href="/">
+            <div className="flex flex-col font-bold border-secondary border-r-1 pr-2">
+                <span>The</span>
+                <h1>Bloomstore</h1>
+                <span>WebShop</span>
+            </div>
+        </Link>
         <div className="hidden md:flex flex-col justify-end border-secondary border-r-1 px-2">
             <span>Collection</span>
             <h1>Store</h1>

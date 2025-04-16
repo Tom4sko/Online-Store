@@ -2,7 +2,7 @@ import React from 'react'
 
 const filter = () => {
   return (
-    <div className="h-full w-full flex flex-col overflow-y-scroll">
+    <div className="w-full flex flex-col">
       <span className="border-secondary border-t-1 w-full uppercase font-bold py-5">Size</span>
       <div className="flex flex-col items-start gap-1 pb-5">
         <label className="flex items-center gap-2">

@@ -1,38 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
-const cardInformations = [
-  {
-    'id': 1,
-    'productName': 'T-shirt addidas',
-    'price': '14.00'
-  },
-  {
-    'id': 2,
-    'productName': 'T-shirt addidas',
-    'price': '14.00'
-  },
-  {
-    'id': 3,
-    'productName': 'T-shirt addidas',
-    'price': '14.00'
-  },
-  {
-    'id': 4,
-    'productName': 'T-shirt addidas',
-    'price': '14.00'
-  },
-  {
-    'id': 5,
-    'productName': 'T-shirt addidas',
-    'price': '14.00'
-  },
-  {
-    'id': 6,
-    'productName': 'T-shirt addidas',
-    'price': '14.00'
-  },
-]
+// database
+import cardInformations from '@/data/catalog.json'
 
 const cards = () => {
   return (
@@ -40,18 +11,20 @@ const cards = () => {
       {
         cardInformations.map((cardInformations, index) => {
           return(
-            <div className="flex flex-col bg-primary w-[250px] xl:w-[325px] h-[300px] xl:h-[375px] z-10" key={index}>
-              <div className="relative bg-slate-200 h-[350px]">
-                <Image
-                  src="/images/tshirt.png"
-                  alt="Product Image"
-                  fill
-                  className="p-5"
-                />
+            <Link href={`/products/${cardInformations.id}`} key={index}>
+              <div className="flex flex-col bg-primary w-[250px] xl:w-[300px] h-[300px] xl:h-[350px] z-10">
+                <div className="relative bg-slate-200 h-[350px]">
+                  <Image
+                    src="/images/tshirt.png"
+                    alt="Product Image"
+                    fill
+                    className="p-5"
+                  />
+                </div>
+                <h2>{cardInformations.title}</h2>
+                <span className="font-bold">{`${cardInformations.price}\$`}</span>
               </div>
-              <h2>{cardInformations.productName}</h2>
-              <span className="font-bold">{`${cardInformations.price}\$`}</span>
-            </div>
+            </Link>
           );
         })
       }

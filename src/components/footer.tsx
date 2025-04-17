@@ -46,7 +46,7 @@ const footer = () => {
             {
                 menuLinks.map((menuLinks, index) => {
                     return(
-                        <div className="" key={index}>
+                        <div className="hover:font-bold" key={index}>
                             <Link href="/">{menuLinks.productName}</Link>
                         </div>
                     );
@@ -54,10 +54,10 @@ const footer = () => {
             }
         </div>
         <div className="flex flex-row justify-end align-middle items-center gap-4 px-2 w-full col-span-3 md:col-span-1">
-            <FaInstagram />
-            <FaFacebook />
-            <FaTiktok />
-            <BsTwitterX />
+            <FaInstagram className="transition-all ease-in-out hover:mb-2 cursor-pointer" />
+            <FaFacebook className="transition-all ease-in-out hover:mb-2 cursor-pointer" />
+            <FaTiktok className="transition-all ease-in-out hover:mb-2 cursor-pointer" />
+            <BsTwitterX className="transition-all ease-in-out hover:mb-2 cursor-pointer" />
         </div>
     </footer>
   )

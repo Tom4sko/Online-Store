@@ -1,40 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Bloomstore - Filter Eshop
 
-## Getting Started
+A **simple and modern e-commerce web application** built with [`Next.js`](https://nextjs.org/) and [`Tailwind CSS`](https://tailwindcss.com/).
 
-First, run the development server:
+This project features a **custom product filtering system**, allowing users to refine results by:
+- Category  
+- Price  
+- Color  
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The store uses efficient **API calls** to dynamically fetch and display products, ensuring fast performance and real-time updates.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![Bloomstore](https://github.com/user-attachments/assets/a66041d8-77c0-410a-a0dc-4df18f432ccd)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+---
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Design
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+The design is inspired by my own creative direction ([tomaszelenak.com](https://www.tomaszelenak.com) [Self-Award😂]) along with elements drawn from top-tier e-commerce inspirations found on [Awwwards](https://www.awwwards.com/).  
+It focuses on clarity, minimalism, and intuitive user experience.
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+![bloomstore2](https://github.com/user-attachments/assets/05456632-c227-4ca5-8b00-0d62eff0317d)
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## API Calls
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+This application utilizes **Next.js** for handling API requests, which are routed through the `/api` endpoint. For instance, a request to the following URL: ```http://localhost:3000/api/products``` will return the full dataset of available products.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+To facilitate product filtering, the API supports query parameters that allow for dynamic data retrieval based on various attributes. For example, a request like: ```http://localhost:3000/api/products?category=jackets&color=blue``` will return a filtered set of products based on the specified **category** (jackets) and **color** (blue). The response will consist of product data that matches these criteria, as demonstrated in the image below.
 
-## Deploy on Vercel
+Additionally, several new parameters have been integrated into the API to enhance the user experience and provide more meaningful insights:
+- **most_clicked_product**: Returns the product with the highest number of clicks.
+- **most_viewed_product**: Returns the product with the highest number of views.
+- **average_price**: Returns the average price of all products within a specific category or filter.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+These new parameters allow for more targeted and useful product discovery, enabling users to quickly access popular or trending items, as well as view statistical insights on pricing trends.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+
+![bloomstore_api](https://github.com/user-attachments/assets/94eb438e-a1de-48c0-bc05-ab2bfeeca046)
+
+---
+
+## Installation
+
+You can freely use my project with command ```git clone https://github.com/Tom4sko/Online-Store```. 
+
+Do not forget to install node modules via ```npm i``` and start dev production with ```npm run dev```.
+
